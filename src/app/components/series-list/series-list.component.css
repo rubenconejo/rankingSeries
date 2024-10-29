@@ -1,0 +1,38 @@
+/* series-list.component.css */
+:root {
+    --color-texto: #333;
+    --color-destacado: #2d98da;
+    --espaciado: 1rem;
+  }
+  
+  .listado-series {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado);
+  }
+  
+  .serie {
+    display: grid;
+    grid-template-columns: 80px 1fr; /* 80px para la carátula, el resto para la info */
+    align-items: center;
+    padding: var(--espaciado);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .caratula {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .info {
+    padding-left: var(--espaciado);
+  }
+  
+  .titulo {
+    color: var(--color-destacado);
+    margin: 0;
+  }
+  

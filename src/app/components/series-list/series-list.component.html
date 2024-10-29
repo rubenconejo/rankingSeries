@@ -1,0 +1,11 @@
+<div class="listado-series">
+    <div class="serie" *ngFor="let serie of series">
+      <img [src]="serie.caratula" alt="Carátula de {{ serie.nombre }}" class="caratula" />
+      <div class="info">
+        <h3 class="titulo">{{ serie.nombre }}</h3>
+        <p>Plataforma: {{ serie.plataforma }}</p>
+        <p>Valoración media: {{ serie.valoracionMedia }}</p>
+      </div>
+    </div>
+</div>
+  
