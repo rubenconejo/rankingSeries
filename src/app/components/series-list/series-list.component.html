@@ -8,4 +8,14 @@
       </div>
     </div>
 </div>
+<div *ngFor="let serie of series" class="serie-grupo">
+    <h2>{{ serie.nombre }}</h2>
+    <p>Plataforma: {{ serie.plataforma }}</p>
+    <ul>
+      <li *ngFor="let valoracion of serie.valoraciones">
+        Autor: {{ valoracion.autor }} - Valoración: {{ valoracion.puntuacion }}
+      </li>
+    </ul>
+</div>
+  
   

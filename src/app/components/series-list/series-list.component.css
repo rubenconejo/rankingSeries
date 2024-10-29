@@ -35,4 +35,20 @@
     color: var(--color-destacado);
     margin: 0;
   }
+  .serie-grupo {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
   
+  .serie-grupo h2 {
+    color: #1e90ff;
+    margin-bottom: 0.5rem;
+  }
+  
+  .serie-grupo ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+    
