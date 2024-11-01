@@ -1,109 +1,187 @@
 {
-    "series": [
-      {
-        "id": 1,
-        "nombre": "Breaking Bad",
-        "plataforma": "Netflix",
-        "sinopsis": "La historia de un profesor de química que, tras ser diagnosticado con cáncer, comienza a fabricar y vender metanfetamina.",
-        "caratula": "url_a_imagen_de_breaking_bad",
-        "valoracionMedia": 9.8,
-        "valoraciones": [
-          { "autor": "David", "puntuacion": 9.9 },
-          { "autor": "Pedro", "puntuacion": 9.8 },
-          { "autor": "Javier", "puntuacion": 9.7 }
-        ]
-      },
-      {
-        "id": 2,
-        "nombre": "Chernobyl",
-        "plataforma": "HBO",
-        "sinopsis": "Relata el desastre nuclear de Chernóbil y los esfuerzos de limpieza sin precedentes que siguieron.",
-        "caratula": "url_a_imagen_de_chernobyl",
-        "valoracionMedia": 9.3,
-        "valoraciones": [
-          { "autor": "David", "puntuacion": 9.4 },
-          { "autor": "Marta", "puntuacion": 9.3 },
-          { "autor": "Javier", "puntuacion": 9.2 }
-        ]
-      },
-      {
-        "id": 3,
-        "nombre": "The Boys",
-        "plataforma": "Prime Video",
-        "sinopsis": "Sigue al equipo de justicieros que enfrentan a superhéroes corruptos que abusan de sus poderes.",
-        "caratula": "url_a_imagen_de_the_boys",
-        "valoracionMedia": 9.1,
-        "valoraciones": [
-          { "autor": "David", "puntuacion": 9.9 },
-          { "autor": "Laura", "puntuacion": 9.1 },
-          { "autor": "Javier", "puntuacion": 8.5 }
-        ]
-      },
-      {
-        "id": 4,
-        "nombre": "Stranger Things",
-        "plataforma": "Netflix",
-        "sinopsis": "Un grupo de niños se encuentra en medio de eventos sobrenaturales en su pequeña ciudad.",
-        "caratula": "url_a_imagen_de_stranger_things",
-        "valoracionMedia": 8.9,
-        "valoraciones": [
-          { "autor": "Marta", "puntuacion": 9.0 },
-          { "autor": "Laura", "puntuacion": 8.8 },
-          { "autor": "Pedro", "puntuacion": 9.0 }
-        ]
-      },
-      {
-        "id": 5,
-        "nombre": "Game of Thrones",
-        "plataforma": "HBO",
-        "sinopsis": "Narra las batallas por el control del Trono de Hierro en los Siete Reinos de Westeros.",
-        "caratula": "url_a_imagen_de_game_of_thrones",
-        "valoracionMedia": 9.0,
-        "valoraciones": [
-          { "autor": "Javier", "puntuacion": 9.5 },
-          { "autor": "David", "puntuacion": 8.9 },
-          { "autor": "Marta", "puntuacion": 8.7 }
-        ]
-      },
-      {
-        "id": 6,
-        "nombre": "The Mandalorian",
-        "plataforma": "Disney+",
-        "sinopsis": "Un cazarrecompensas solitario explora la galaxia tras la caída del Imperio.",
-        "caratula": "url_a_imagen_de_the_mandalorian",
-        "valoracionMedia": 9.2,
-        "valoraciones": [
-          { "autor": "Pedro", "puntuacion": 9.3 },
-          { "autor": "Laura", "puntuacion": 9.0 },
-          { "autor": "Marta", "puntuacion": 9.2 }
-        ]
-      },
-      {
-        "id": 7,
-        "nombre": "Dark",
-        "plataforma": "Netflix",
-        "sinopsis": "Un thriller alemán que sigue la desaparición de dos niños y las conexiones entre cuatro familias.",
-        "caratula": "url_a_imagen_de_dark",
-        "valoracionMedia": 8.8,
-        "valoraciones": [
-          { "autor": "David", "puntuacion": 9.0 },
-          { "autor": "Pedro", "puntuacion": 8.7 },
-          { "autor": "Javier", "puntuacion": 8.8 }
-        ]
-      },
-      {
-        "id": 8,
-        "nombre": "The Witcher",
-        "plataforma": "Netflix",
-        "sinopsis": "Un cazador de monstruos, Geralt de Rivia, lucha por encontrar su lugar en un mundo lleno de bestias y corrupción.",
-        "caratula": "url_a_imagen_de_the_witcher",
-        "valoracionMedia": 8.5,
-        "valoraciones": [
-          { "autor": "Laura", "puntuacion": 8.6 },
-          { "autor": "Pedro", "puntuacion": 8.5 },
-          { "autor": "Javier", "puntuacion": 8.4 }
-        ]
-      }
-    ]
-  }
-  
+  "series": [
+    {
+      "id": "1",
+      "nombre": "Breaking Bad",
+      "plataforma": "Netflix",
+      "sinopsis": "La historia de un profesor de química que, tras ser diagnosticado con cáncer, comienza a fabricar y vender metanfetamina.",
+      "caratula": "url_a_imagen_de_breaking_bad",
+      "valoracionMedia": 9.8,
+      "valoraciones": [
+        {
+          "autor": "David",
+          "puntuacion": 9.9
+        },
+        {
+          "autor": "Pedro",
+          "puntuacion": 9.8
+        },
+        {
+          "autor": "Javier",
+          "puntuacion": 9.7
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "nombre": "Chernobyl",
+      "plataforma": "HBO",
+      "sinopsis": "Relata el desastre nuclear de Chernóbil y los esfuerzos de limpieza sin precedentes que siguieron.",
+      "caratula": "url_a_imagen_de_chernobyl",
+      "valoracionMedia": 9.3,
+      "valoraciones": [
+        {
+          "autor": "David",
+          "puntuacion": 9.4
+        },
+        {
+          "autor": "Marta",
+          "puntuacion": 9.3
+        },
+        {
+          "autor": "Javier",
+          "puntuacion": 9.2
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "nombre": "The Boys",
+      "plataforma": "Prime Video",
+      "sinopsis": "Sigue al equipo de justicieros que enfrentan a superhéroes corruptos que abusan de sus poderes.",
+      "caratula": "url_a_imagen_de_the_boys",
+      "valoracionMedia": 9.1,
+      "valoraciones": [
+        {
+          "autor": "David",
+          "puntuacion": 9.9
+        },
+        {
+          "autor": "Laura",
+          "puntuacion": 9.1
+        },
+        {
+          "autor": "Javier",
+          "puntuacion": 8.5
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "nombre": "Stranger Things",
+      "plataforma": "Netflix",
+      "sinopsis": "Un grupo de niños se encuentra en medio de eventos sobrenaturales en su pequeña ciudad.",
+      "caratula": "url_a_imagen_de_stranger_things",
+      "valoracionMedia": 8.9,
+      "valoraciones": [
+        {
+          "autor": "Marta",
+          "puntuacion": 9
+        },
+        {
+          "autor": "Laura",
+          "puntuacion": 8.8
+        },
+        {
+          "autor": "Pedro",
+          "puntuacion": 9
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "nombre": "Game of Thrones",
+      "plataforma": "HBO",
+      "sinopsis": "Narra las batallas por el control del Trono de Hierro en los Siete Reinos de Westeros.",
+      "caratula": "url_a_imagen_de_game_of_thrones",
+      "valoracionMedia": 9,
+      "valoraciones": [
+        {
+          "autor": "Javier",
+          "puntuacion": 9.5
+        },
+        {
+          "autor": "David",
+          "puntuacion": 8.9
+        },
+        {
+          "autor": "Marta",
+          "puntuacion": 8.7
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "nombre": "The Mandalorian",
+      "plataforma": "Disney+",
+      "sinopsis": "Un cazarrecompensas solitario explora la galaxia tras la caída del Imperio.",
+      "caratula": "url_a_imagen_de_the_mandalorian",
+      "valoracionMedia": 9.2,
+      "valoraciones": [
+        {
+          "autor": "Pedro",
+          "puntuacion": 9.3
+        },
+        {
+          "autor": "Laura",
+          "puntuacion": 9
+        },
+        {
+          "autor": "Marta",
+          "puntuacion": 9.2
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "nombre": "Dark",
+      "plataforma": "Netflix",
+      "sinopsis": "Un thriller alemán que sigue la desaparición de dos niños y las conexiones entre cuatro familias.",
+      "caratula": "url_a_imagen_de_dark",
+      "valoracionMedia": 8.8,
+      "valoraciones": [
+        {
+          "autor": "David",
+          "puntuacion": 9
+        },
+        {
+          "autor": "Pedro",
+          "puntuacion": 8.7
+        },
+        {
+          "autor": "Javier",
+          "puntuacion": 8.8
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "nombre": "The Witcher",
+      "plataforma": "Netflix",
+      "sinopsis": "Un cazador de monstruos, Geralt de Rivia, lucha por encontrar su lugar en un mundo lleno de bestias y corrupción.",
+      "caratula": "url_a_imagen_de_the_witcher",
+      "valoracionMedia": 8.5,
+      "valoraciones": [
+        {
+          "autor": "Laura",
+          "puntuacion": 8.6
+        },
+        {
+          "autor": "Pedro",
+          "puntuacion": 8.5
+        },
+        {
+          "autor": "Javier",
+          "puntuacion": 8.4
+        }
+      ]
+    },
+    {
+      "id": "7b1d",
+      "nombre": "Toy Story",
+      "plataforma": "Disney +",
+      "sinopsis": "Juguetes con vida propia",
+      "caratula": "https://th.bing.com/th/id/OIP.jHBzeVfpQ1U2ji5UoRqAYwHaJK?rs=1&pid=ImgDetMain"
+    }
+  ]
+}
