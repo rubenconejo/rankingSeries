@@ -10,7 +10,7 @@
 
   <div>
     <label>Puntuación:</label>
-    <input type="number" formControlName="rating" min="0" max="10" step="0.1">
+    <input type="number" formControlName="puntuacion" min="0" max="10" step="0.1">
     <div *ngIf="ratingForm.get('puntuacion')?.invalid && ratingForm.get('puntuacion')?.touched">
       <small>Introduce una puntuación válida entre 0 y 10.</small>
     </div>

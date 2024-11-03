@@ -25,9 +25,14 @@ export class AddSerieComponent {
     this.serieForm = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(2)]],
       plataforma: ['', Validators.required],
-      sinopsis: [''],
       imageType: ['url'],
-      caratulaUrl: ['', Validators.pattern('(https?:\/\/.*\.(?:png|jpg|jpeg))')],
+      sinopsis: ['', [Validators.required, Validators.maxLength(120)]],
+      caratulaUrl: ['',
+        [
+          Validators.required,
+          Validators.pattern('https?://.*\\.(?:png|jpg|jpeg|gif|webp)$')
+        ]
+      ]
     });
   }
 

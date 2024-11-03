@@ -2,29 +2,43 @@
 <div class="series-container">
   <div class="serie-card" *ngFor="let serie of series">
     <!-- Imagen de la serie -->
-    <img [src]="serie.caratula" alt="Carátula de {{ serie.nombre }}" class="caratula">
-
+    <div class="caratula-wrapper">
+      <img [src]="serie.caratula" alt="Carátula de {{ serie.nombre }}" class="caratula">
+    </div>
     <div class="card-content">
       <div class="card-header">
         <h3>{{ serie.nombre }}</h3>
         <p class="platform">{{ serie.plataforma }}</p>
       </div>
-      
-      <!-- Contenedor para la valoración media -->
+      <div class="sinopsis">
+        <p>{{ serie.sinopsis }}</p>
+      </div>
       <p class="rating-average">
         Valoración media:
-        <span class="rating-box" [ngClass]="getRatingClass(serie.valoracionMedia)">
-          {{ serie.valoracionMedia | number: '1.1-2' }}
+        <span *ngIf="serie.valoraciones && serie.valoraciones.length > 0; else noRating" 
+              class="rating-box" 
+              [ngClass]="getRatingClass(serie.valoracionMedia)">
+          {{ serie.valoracionMedia | number: '1.1-1' }}
         </span>
+        <ng-template #noRating>
+          <span class="no-rating">Sin valoración</span>
+        </ng-template>
       </p>
-
-      <ul class="ratings-list">
+      
+      <!-- <ul class="ratings-list">
         <li *ngFor="let valoracion of serie.valoraciones">
           <span>{{ valoracion.autor }}:</span> {{ valoracion.puntuacion }}
         </li>
+      </ul> -->
+      <ul class="ratings-list" *ngIf="serie.valoraciones && serie.valoraciones.length > 0">
+        <li *ngFor="let valoracion of serie.valoraciones" class="rating-item">
+          <span class="rating-author">{{ valoracion.autor }}</span>
+          <span class="rating-score">{{ valoracion.puntuacion }}</span>
+        </li>
       </ul>
-      <button class="add-rating-button" (click)="navigateToAddRating(serie.id)">Añadir Valoración</button>
-    </div>
+      <div class="button-container">
+        <button class="add-rating-button" (click)="navigateToAddRating(serie.id)">Añadir Valoración</button>
+      </div>    </div>
   </div>
 </div>
 

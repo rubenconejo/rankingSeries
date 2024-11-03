@@ -20,9 +20,15 @@
     <div>
         <label>Sinopsis:</label>
         <textarea formControlName="sinopsis"></textarea>
-    </div>
+        <small *ngIf="serieForm.get('sinopsis')">
+          {{ serieForm.get('sinopsis')?.value.length || 0 }}/150 caracteres
+        </small>
+        <div *ngIf="serieForm.get('sinopsis')?.invalid && serieForm.get('sinopsis')?.touched">
+          <small>La sinopsis no debe exceder los 120 caracteres.</small>
+        </div>
+      </div>
 
-    <div>
+    <!-- <div>
         <label>Carátula:</label>
         <div>
             <input type="radio" formControlName="imageType" value="url" (change)="onImageTypeChange()"> URL
@@ -40,6 +46,30 @@
                 <img [src]="imagePreview" alt="Vista previa" width="150">
             </div>
         </div>
-    </div>
+    </div> -->
+    <div>
+        <label>Carátula:</label>
+        <div>
+          <input type="radio" formControlName="imageType" value="url" (change)="onImageTypeChange()"> URL
+          <input type="radio" formControlName="imageType" value="file" (change)="onImageTypeChange()"> Archivo
+        </div>
+        <div *ngIf="serieForm.get('imageType')?.value === 'url'">
+          <input type="text" formControlName="caratulaUrl" placeholder="Introduce URL de la imagen">
+          <div *ngIf="serieForm.get('caratulaUrl')?.invalid && serieForm.get('caratulaUrl')?.touched">
+            <small *ngIf="serieForm.get('caratulaUrl')?.errors?.['pattern']">
+              Introduce una URL válida que termine en .png, .jpg, .jpeg, .gif o webp.
+            </small>
+            <small *ngIf="serieForm.get('caratulaUrl')?.errors?.['required']">
+              La URL de la carátula es obligatoria.
+            </small>
+          </div>
+        </div>
+        <div *ngIf="serieForm.get('imageType')?.value === 'file'">
+          <input type="file" (change)="onFileSelected($event)">
+          <div *ngIf="imagePreview">
+            <img [src]="imagePreview" alt="Vista previa" width="150">
+          </div>
+        </div>
+      </div>
     <button type="submit" [disabled]="serieForm.invalid">Añadir Serie</button>
 </form>

@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './add-rating.component.css'
 })
 export class AddRatingComponent {
-  @Input() serieId!: number; 
+  @Input() serieId!: string; 
   ratingForm: FormGroup;
 
   constructor(
@@ -23,13 +23,24 @@ export class AddRatingComponent {
   ) {
     this.ratingForm = this.fb.group({
       autor: ['', Validators.required],
-      rating: [0, [Validators.required, Validators.min(0), Validators.max(10)]]
+      puntuacion: [[Validators.required, Validators.min(0), Validators.max(10)]]
     });
   }
 
   ngOnInit() {
-    this.serieId = Number(this.route.snapshot.paramMap.get('serieId'));
-    console.log(this.serieId)
+    this.serieId = this.route.snapshot.paramMap.get('serieId') || '';
+    console.log(this.serieId);
+    const id = this.route.snapshot.paramMap.get('serieId');
+    console.log(id)
+    if (!this.serieId) {
+      console.error("Error: serieId no está definido en la ruta.");
+    }
+
+    // if (this.serieId) {
+    //   this.serieId = +this.serieId; // Usa el operador + para convertirlo a número
+    // } else {
+    //   console.error("Error: serieId no está definido en la ruta.");
+    // }
   }
 
   addRating() {
@@ -38,6 +49,8 @@ export class AddRatingComponent {
         alert('Valoración añadida exitosamente');
         this.router.navigate(['/series']);
       });
+    } else {
+      console.error("Error: El formulario es inválido o el ID de la serie no está definido.");
     }
   }
 }

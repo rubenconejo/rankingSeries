@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { SeriesService } from '../../services/series.service';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-series-list',
   standalone: true,
@@ -60,18 +59,17 @@ export class SeriesListComponent {
     });
   }
 
-    // Método para aplicar la clase de color según la valoración media
-    getRatingClass(valoracionMedia: number): string {
-      if (valoracionMedia >= 7) {
-        return 'high-rating'; // Verde
-      } else if (valoracionMedia >= 5) {
-        return 'medium-rating'; // Amarillo
-      } else {
-        return 'low-rating'; // Rojo
-      }
+  getRatingClass(valoracionMedia: number): string {
+    if (valoracionMedia >= 7) {
+      return 'high-rating'; // Verde
+    } else if (valoracionMedia >= 5) {
+      return 'medium-rating'; // Amarillo
+    } else {
+      return 'low-rating'; // Rojo
     }
+  }
 
-    navigateToAddRating(serieId: number) {
-      this.router.navigate(['/add-rating', serieId]);
-    }
+  navigateToAddRating(serieId: number) {
+    this.router.navigate(['/add-rating', serieId]);
+  }
 }
