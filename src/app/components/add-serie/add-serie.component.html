@@ -27,9 +27,13 @@
   </div>
   <div>
     <label>Carátula:</label>
-    <div>
-      <input type="radio" formControlName="imageType" value="url" (change)="onImageTypeChange()"> URL
-      <input type="radio" formControlName="imageType" value="file" (change)="onImageTypeChange()"> Archivo
+    <div class="caratula-options">
+      <label class="radio-option">
+        <input type="radio" formControlName="imageType" value="url" (change)="onImageTypeChange()"> URL
+      </label>
+      <label class="radio-option">
+        <input type="radio" formControlName="imageType" value="file" (change)="onImageTypeChange()"> Archivo
+      </label>
     </div>
     <div *ngIf="serieForm.get('imageType')?.value === 'url'">
       <input type="text" formControlName="caratulaUrl" placeholder="Introduce URL de la imagen">

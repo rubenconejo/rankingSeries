@@ -65,7 +65,6 @@ export class AddSerieComponent {
       };
 
       this.seriesService.addSerie(serie).subscribe(() => {
-        alert('Serie añadida exitosamente');
         this.router.navigate(['/']);
       });
     } else {

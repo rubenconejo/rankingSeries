@@ -154,7 +154,7 @@
       "plataforma": "Netflix",
       "sinopsis": "Un thriller alemán que sigue la desaparición de dos niños y las conexiones entre cuatro familias.",
       "caratula": "https://th.bing.com/th/id/OIP.fKjhg91fFQWFKRyD-32VPwAAAA?w=115&h=180&c=7&r=0&o=5&pid=1.7",
-      "valoracionMedia": 8.625,
+      "valoracionMedia": 7.5,
       "valoraciones": [
         {
           "autor": "David",
@@ -171,6 +171,10 @@
         {
           "autor": "Rubén",
           "puntuacion": 8
+        },
+        {
+          "autor": "ñññ",
+          "puntuacion": 3
         }
       ]
     },
@@ -210,7 +214,14 @@
       "sinopsis": "Película de Terror",
       "imageType": "url",
       "caratulaUrl": "https://pics.filmaffinity.com/the_ring-712833488-large.jpg",
-      "caratula": "https://pics.filmaffinity.com/the_ring-712833488-large.jpg"
+      "caratula": "https://pics.filmaffinity.com/the_ring-712833488-large.jpg",
+      "valoraciones": [
+        {
+          "autor": "Rubén",
+          "puntuacion": 7
+        }
+      ],
+      "valoracionMedia": 7
     },
     {
       "id": "11",
@@ -238,90 +249,13 @@
       "valoracionMedia": 8
     },
     {
-      "id": "13",
-      "nombre": "test",
+      "id": "46bc",
+      "nombre": "Alist",
       "plataforma": "Netflix",
       "imageType": "url",
-      "sinopsis": "ikask hjkhdjas hkjh",
-      "caratulaUrl": "https://wallpapercave.com/wp/wp6473119.jpg",
-      "caratula": "https://wallpapercave.com/wp/wp6473119.jpg",
-      "valoraciones": [
-        {
-          "autor": "pppp",
-          "puntuacion": 5
-        },
-        {
-          "autor": "ss",
-          "puntuacion": 0
-        },
-        {
-          "autor": "yyy",
-          "puntuacion": 1
-        },
-        {
-          "autor": "eee",
-          "puntuacion": 5
-        }
-      ],
-      "valoracionMedia": 2.75
-    },
-    {
-      "id": "14",
-      "nombre": "test",
-      "plataforma": "test",
-      "imageType": "url",
-      "sinopsis": "test",
-      "caratulaUrl": "https://cdn.pixabay.com/photo/2022/12/13/05/16/flowers-7652496_1280.png",
-      "caratula": "https://cdn.pixabay.com/photo/2022/12/13/05/16/flowers-7652496_1280.png",
-      "valoraciones": [
-        {
-          "autor": "pppp",
-          "puntuacion": 5
-        },
-        {
-          "autor": "hola",
-          "puntuacion": 3
-        },
-        {
-          "autor": "ooo",
-          "puntuacion": 8
-        }
-      ],
-      "valoracionMedia": 5.333333333333333
-    },
-    {
-      "id": "016b",
-      "nombre": "oiuoiuoi",
-      "plataforma": "rtretretret",
-      "imageType": "url",
-      "sinopsis": "retretretretert",
-      "caratulaUrl": "https://cdn.pixabay.com/photo/2022/12/13/05/16/flowers-7652496_1280.png",
-      "caratula": "https://cdn.pixabay.com/photo/2022/12/13/05/16/flowers-7652496_1280.png",
-      "valoraciones": [
-        {
-          "autor": "aasdsds",
-          "puntuacion": 6
-        }
-      ],
-      "valoracionMedia": 6
-    },
-    {
-      "id": "75c4",
-      "nombre": "test",
-      "plataforma": "test",
-      "imageType": "url",
-      "sinopsis": "test",
-      "caratulaUrl": "https://cdn.pixabay.com/photo/2022/12/13/05/16/flowers-7652496_1280.png",
-      "caratula": "https://cdn.pixabay.com/photo/2022/12/13/05/16/flowers-7652496_1280.png"
-    },
-    {
-      "id": "229b",
-      "nombre": "test66",
-      "plataforma": "test66",
-      "imageType": "url",
-      "sinopsis": "test66",
-      "caratulaUrl": "https://cdn.pixabay.com/photo/2022/12/13/05/16/flowers-7652496_1280.png",
-      "caratula": "https://cdn.pixabay.com/photo/2022/12/13/05/16/flowers-7652496_1280.png"
+      "sinopsis": "Serie",
+      "caratulaUrl": "https://i.pinimg.com/736x/2d/8d/2f/2d8d2f2c7587b78abe495398f99e3bc0.jpg",
+      "caratula": "https://i.pinimg.com/736x/2d/8d/2f/2d8d2f2c7587b78abe495398f99e3bc0.jpg"
     }
   ]
 }

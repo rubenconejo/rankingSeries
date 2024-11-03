@@ -6,6 +6,7 @@
     max-width: 1000px;
     margin: 1.5rem auto;
     padding: 1rem;
+    flex-wrap: wrap;
 }
 
 .filter-container input,
@@ -22,4 +23,17 @@
 .filter-container input:focus,
 .filter-container select:focus {
     box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+}
+
+@media (max-width: 600px) {
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .filter-container input,
+    .filter-container select {
+        width: 100%;
+    }
 }

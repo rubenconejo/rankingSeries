@@ -38,7 +38,6 @@ export class AddRatingComponent {
   addRating() {
     if (this.ratingForm.valid) {
       this.seriesService.addRating(this.serieId, this.ratingForm.value).subscribe(() => {
-        alert('Valoración añadida exitosamente');
         this.router.navigate(['/series']);
       });
     } else {
