@@ -1,0 +1,20 @@
+<h3>Añadir Valoración</h3>
+<form [formGroup]="ratingForm" (ngSubmit)="addRating()">
+  <div>
+    <label>Autor:</label>
+    <input type="text" formControlName="autor">
+    <div *ngIf="ratingForm.get('autor')?.invalid && ratingForm.get('autor')?.touched">
+      <small>El autor es obligatorio.</small>
+    </div>
+  </div>
+
+  <div>
+    <label>Puntuación:</label>
+    <input type="number" formControlName="rating" min="0" max="10" step="0.1">
+    <div *ngIf="ratingForm.get('puntuacion')?.invalid && ratingForm.get('puntuacion')?.touched">
+      <small>Introduce una puntuación válida entre 0 y 10.</small>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="ratingForm.invalid">Añadir Valoración</button>
+</form>

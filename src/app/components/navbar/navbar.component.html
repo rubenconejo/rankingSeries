@@ -1,31 +1,18 @@
-<!-- <nav class="navbar">
-    <div class="navbar-logo">Series App</div>
-    <ul class="navbar-links">
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Series</a></li>
-      <li><a href="#">Ranking</a></li>
-      <li><a href="#">Añadir Serie</a></li>
-    </ul>
-</nav> -->
-
-<div class="container-nav">
+<nav class="navbar">
   <div class="logo">RankingS</div>
-    <div class="hamburger" onclick="getHamburger()">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-    <nav class="nav-bar">
-      <ul>
-        <li>
-          <a routerLink="/" class="active">Home</a>
-        </li>
-        <li>
-          <a routerLink="/series">Series</a>
-        </li>
-        <li>
-          <a routerLink="/add-serie">Añadir Serie</a>
-        </li>
-      </ul>
-    </nav>
-</div>  
+  <ul class="navbar-links">
+    <!-- <li><a routerLink="/" routerLinkActive="active">Home</a></li> -->
+    <li><a routerLink="/series" routerLinkActive="active">Series</a></li>
+    <li><a routerLink="/add-serie" routerLinkActive="active">Añadir Serie</a></li>
+  </ul>
+  <div class="hamburger" (click)="toggleMenu()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+</nav>
+<ul class="mobile-menu" [class.open]="menuOpen">
+  <li><a routerLink="/" routerLinkActive="active" (click)="toggleMenu()">Home</a></li>
+  <li><a routerLink="/series" routerLinkActive="active" (click)="toggleMenu()">Series</a></li>
+  <li><a routerLink="/add-serie" routerLinkActive="active" (click)="toggleMenu()">Añadir Serie</a></li>
+</ul>

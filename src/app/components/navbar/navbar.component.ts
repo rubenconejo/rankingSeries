@@ -10,15 +10,9 @@ import { RouterModule } from '@angular/router';
 })
 
 export class NavbarComponent {
-  hamburger!: any;
+  menuOpen = false;
 
-  getHamburger(){
-    console.log("hola 0")
-    this.hamburger = document.querySelector(".hamburguer");
-    console.log("hola")
-    this.hamburger.onclick = function() {
-      let navBar = document.querySelector(".nav-bar");
-      navBar?.classList.toggle("active");
-    }
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
   }
 }

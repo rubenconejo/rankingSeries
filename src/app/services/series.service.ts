@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,12 @@ export class SeriesService {
     return this.http.post(this.apiUrl, serie);
   }
 
-  addValoracion(id: number, valoracion: any): Observable<any> {
-    return this.http.patch(`${this.apiUrl}/${id}`, valoracion);
+  addRating(serieId: number, rating: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${serieId}`).pipe(
+      switchMap((serie: any) => {
+        serie.valoraciones.push(rating);
+        return this.http.put(`${this.apiUrl}/${serieId}`, serie);
+      })
+    );
   }
 }

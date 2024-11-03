@@ -1,21 +1,30 @@
-<div class="listado-series">
-    <div class="serie" *ngFor="let serie of series">
-      <img [src]="serie.caratula" alt="Carátula de {{ serie.nombre }}" class="caratula" />
-      <div class="info">
-        <h3 class="titulo">{{ serie.nombre }}</h3>
-        <p>Plataforma: {{ serie.plataforma }}</p>
-        <p>Valoración media: {{ serie.valoracionMedia }}</p>
+<h2>Listado de Series</h2>
+<div class="series-container">
+  <div class="serie-card" *ngFor="let serie of series">
+    <!-- Imagen de la serie -->
+    <img [src]="serie.caratula" alt="Carátula de {{ serie.nombre }}" class="caratula">
+
+    <div class="card-content">
+      <div class="card-header">
+        <h3>{{ serie.nombre }}</h3>
+        <p class="platform">{{ serie.plataforma }}</p>
       </div>
+      
+      <!-- Contenedor para la valoración media -->
+      <p class="rating-average">
+        Valoración media:
+        <span class="rating-box" [ngClass]="getRatingClass(serie.valoracionMedia)">
+          {{ serie.valoracionMedia | number: '1.1-2' }}
+        </span>
+      </p>
+
+      <ul class="ratings-list">
+        <li *ngFor="let valoracion of serie.valoraciones">
+          <span>{{ valoracion.autor }}:</span> {{ valoracion.puntuacion }}
+        </li>
+      </ul>
+      <button class="add-rating-button" (click)="navigateToAddRating(serie.id)">Añadir Valoración</button>
     </div>
+  </div>
 </div>
-<div *ngFor="let serie of series" class="serie-grupo">
-    <h2>{{ serie.nombre }}</h2>
-    <p>Plataforma: {{ serie.plataforma }}</p>
-    <ul>
-      <li *ngFor="let valoracion of serie.valoraciones">
-        Autor: {{ valoracion.autor }} - Valoración: {{ valoracion.puntuacion }}
-      </li>
-    </ul>
-</div>
-  
-  
+

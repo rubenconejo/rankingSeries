@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SeriesService } from '../../services/series.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-series-list',
@@ -13,7 +15,7 @@ export class SeriesListComponent {
 
   series: any[] = [];
 
-  constructor(private seriesService: SeriesService) { }
+  constructor(private seriesService: SeriesService, private router: Router) { }
 
   ngOnInit() {
     this.seriesService.getSeries().subscribe((data) => {
@@ -24,10 +26,9 @@ export class SeriesListComponent {
   }
 
   private groupAndSortSeries(seriesList: any[]): any[] {
-    const groupedSeries = this.groupSeries(seriesList); // Agrupamos
-    const seriesWithAverage = this.calculateAverageRating(groupedSeries); // Calculamos la media
+    const groupedSeries = this.groupSeries(seriesList);
+    const seriesWithAverage = this.calculateAverageRating(groupedSeries);
 
-    // Ordenamos alfabéticamente y retornamos
     return seriesWithAverage.sort((a: any, b: any) => a.nombre.localeCompare(b.nombre));
   }
 
@@ -41,12 +42,13 @@ export class SeriesListComponent {
           valoraciones: []
         };
       }
-      acc[serie.nombre].valoraciones.push(...serie.valoraciones);
+      const getRatings = serie.valoraciones || [];
+      acc[serie.nombre].getRatings.push(...serie.valoraciones);
       return acc;
     }, {});
+    return Object.values(grouped).sort((a: any, b: any) => a.nombre.localeCompare(b.nombre));
 
-    // Convertimos el objeto agrupado a un array para facilitar el cálculo de la media
-    return Object.values(grouped);
+    // return Object.values(grouped);
   }
 
   private calculateAverageRating(seriesList: any[]): any[] {
@@ -57,4 +59,19 @@ export class SeriesListComponent {
       return serie;
     });
   }
+
+    // Método para aplicar la clase de color según la valoración media
+    getRatingClass(valoracionMedia: number): string {
+      if (valoracionMedia >= 7) {
+        return 'high-rating'; // Verde
+      } else if (valoracionMedia >= 5) {
+        return 'medium-rating'; // Amarillo
+      } else {
+        return 'low-rating'; // Rojo
+      }
+    }
+
+    navigateToAddRating(serieId: number) {
+      this.router.navigate(['/add-rating', serieId]);
+    }
 }
