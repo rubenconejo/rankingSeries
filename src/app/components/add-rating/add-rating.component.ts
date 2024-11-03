@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SeriesService } from '../../services/series.service';
-import { Router, ActivatedRoute  } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './add-rating.component.css'
 })
 export class AddRatingComponent {
-  @Input() serieId!: string; 
+  @Input() serieId!: string;
   ratingForm: FormGroup;
 
   constructor(
@@ -29,18 +29,10 @@ export class AddRatingComponent {
 
   ngOnInit() {
     this.serieId = this.route.snapshot.paramMap.get('serieId') || '';
-    console.log(this.serieId);
     const id = this.route.snapshot.paramMap.get('serieId');
-    console.log(id)
     if (!this.serieId) {
       console.error("Error: serieId no está definido en la ruta.");
     }
-
-    // if (this.serieId) {
-    //   this.serieId = +this.serieId; // Usa el operador + para convertirlo a número
-    // } else {
-    //   console.error("Error: serieId no está definido en la ruta.");
-    // }
   }
 
   addRating() {

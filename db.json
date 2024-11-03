@@ -11,6 +11,14 @@
         {
           "autor": "pepe",
           "puntuacion": 5
+        },
+        {
+          "autor": "ruben",
+          "puntuacion": 7
+        },
+        {
+          "autor": "pepe",
+          "puntuacion": 3
         }
       ]
     },
@@ -146,7 +154,7 @@
       "plataforma": "Netflix",
       "sinopsis": "Un thriller alemán que sigue la desaparición de dos niños y las conexiones entre cuatro familias.",
       "caratula": "https://th.bing.com/th/id/OIP.fKjhg91fFQWFKRyD-32VPwAAAA?w=115&h=180&c=7&r=0&o=5&pid=1.7",
-      "valoracionMedia": 8.8,
+      "valoracionMedia": 8.625,
       "valoraciones": [
         {
           "autor": "David",
@@ -159,6 +167,10 @@
         {
           "autor": "Javier",
           "puntuacion": 8.8
+        },
+        {
+          "autor": "Rubén",
+          "puntuacion": 8
         }
       ]
     },
@@ -292,6 +304,24 @@
         }
       ],
       "valoracionMedia": 6
+    },
+    {
+      "id": "75c4",
+      "nombre": "test",
+      "plataforma": "test",
+      "imageType": "url",
+      "sinopsis": "test",
+      "caratulaUrl": "https://cdn.pixabay.com/photo/2022/12/13/05/16/flowers-7652496_1280.png",
+      "caratula": "https://cdn.pixabay.com/photo/2022/12/13/05/16/flowers-7652496_1280.png"
+    },
+    {
+      "id": "229b",
+      "nombre": "test66",
+      "plataforma": "test66",
+      "imageType": "url",
+      "sinopsis": "test66",
+      "caratulaUrl": "https://cdn.pixabay.com/photo/2022/12/13/05/16/flowers-7652496_1280.png",
+      "caratula": "https://cdn.pixabay.com/photo/2022/12/13/05/16/flowers-7652496_1280.png"
     }
   ]
 }

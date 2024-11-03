@@ -75,27 +75,27 @@ button[disabled] {
 form div label {
     margin-bottom: 0.5rem;
     font-weight: bold;
-  }
-  
-  .radio-group {
+}
+
+.radio-group {
     display: flex;
     gap: 1rem;
     align-items: center;
     margin-bottom: 1rem;
-  }
-  
-  .radio-group input[type="radio"] {
+}
+
+.radio-group input[type="radio"] {
     accent-color: #1e90ff;
-  }
-  
-  .radio-group label {
+}
+
+.radio-group label {
     font-size: 1rem;
     color: #555;
-  }
-  
-  img {
+}
+
+img {
     margin-top: 1rem;
     max-width: 100%;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
+}

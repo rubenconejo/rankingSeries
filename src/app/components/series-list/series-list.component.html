@@ -1,44 +1,40 @@
 <h2>Listado de Series</h2>
+<app-filter (filterChange)="applyFilters($event)"></app-filter>
+<div *ngIf="filteredSeries.length === 0" class="no-results">
+  No se encontraron resultados.
+</div>
 <div class="series-container">
-  <div class="serie-card" *ngFor="let serie of series">
-    <!-- Imagen de la serie -->
+  <div class="serie-card" *ngFor="let serie of filteredSeries">
     <div class="caratula-wrapper">
       <img [src]="serie.caratula" alt="Carátula de {{ serie.nombre }}" class="caratula">
     </div>
     <div class="card-content">
       <div class="card-header">
-        <h3>{{ serie.nombre }}</h3>
-        <p class="platform">{{ serie.plataforma }}</p>
+        <h3>{{ serie.nombre | titlecase }}</h3>
+        <p class="platform">{{ serie.plataforma | titlecase }}</p>
       </div>
       <div class="sinopsis">
         <p>{{ serie.sinopsis }}</p>
       </div>
       <p class="rating-average">
         Valoración media:
-        <span *ngIf="serie.valoraciones && serie.valoraciones.length > 0; else noRating" 
-              class="rating-box" 
-              [ngClass]="getRatingClass(serie.valoracionMedia)">
+        <span *ngIf="serie.valoraciones && serie.valoraciones.length > 0; else noRating" class="rating-box"
+          [ngClass]="getRatingClass(serie.valoracionMedia)">
           {{ serie.valoracionMedia | number: '1.1-1' }}
         </span>
         <ng-template #noRating>
           <span class="no-rating">Sin valoración</span>
         </ng-template>
       </p>
-      
-      <!-- <ul class="ratings-list">
-        <li *ngFor="let valoracion of serie.valoraciones">
-          <span>{{ valoracion.autor }}:</span> {{ valoracion.puntuacion }}
-        </li>
-      </ul> -->
       <ul class="ratings-list" *ngIf="serie.valoraciones && serie.valoraciones.length > 0">
         <li *ngFor="let valoracion of serie.valoraciones" class="rating-item">
-          <span class="rating-author">{{ valoracion.autor }}</span>
+          <span class="rating-author">{{ valoracion.autor | titlecase }}</span>
           <span class="rating-score">{{ valoracion.puntuacion }}</span>
         </li>
       </ul>
       <div class="button-container">
         <button class="add-rating-button" (click)="navigateToAddRating(serie.id)">Añadir Valoración</button>
-      </div>    </div>
+      </div>
+    </div>
   </div>
 </div>
-

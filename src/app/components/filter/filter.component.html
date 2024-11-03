@@ -1,1 +1,11 @@
-<p>filter works!</p>
+<div class="filter-container">
+    <input type="text" placeholder="Buscar por nombre" [(ngModel)]="filters.nombre" (input)="applyFilters()" />
+    <label for="orden">Ordenar por:</label>
+    <select id="orden" [(ngModel)]="filters.orden" (change)="applyFilters()">
+        <option value="">Sin orden</option>
+        <option value="alf-asc">Nombre A-Z</option>
+        <option value="alf-desc">Nombre Z-A</option>
+        <option value="val-asc">Peor a Mejor</option>
+        <option value="val-desc">Mejor a Peor</option>
+    </select>
+</div>

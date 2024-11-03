@@ -1,75 +1,53 @@
 <h2>Añadir Nueva Serie</h2>
 <form [formGroup]="serieForm" (ngSubmit)="addSerie()">
-    <div>
-        <label>Nombre:</label>
-        <input type="text" formControlName="nombre">
-        <div *ngIf="serieForm.get('nombre')?.invalid && serieForm.get('nombre')?.touched">
-            <small *ngIf="serieForm.get('nombre')?.errors?.['required']">El nombre es obligatorio.</small>
-            <small *ngIf="serieForm.get('nombre')?.errors?.['minlength']">El nombre debe tener al menos 2 caracteres.</small>
-        </div>
+  <div>
+    <label>Nombre:</label>
+    <input type="text" formControlName="nombre">
+    <div *ngIf="serieForm.get('nombre')?.invalid && serieForm.get('nombre')?.touched">
+      <small *ngIf="serieForm.get('nombre')?.errors?.['required']">El nombre es obligatorio.</small>
+      <small *ngIf="serieForm.get('nombre')?.errors?.['minlength']">El nombre debe tener al menos 2 caracteres.</small>
     </div>
-
-    <div>
-        <label>Plataforma:</label>
-        <input type="text" formControlName="plataforma">
-        <div *ngIf="serieForm.get('plataforma')?.invalid && serieForm.get('plataforma')?.touched">
-            <small>La plataforma es obligatoria.</small>
-        </div>
+  </div>
+  <div>
+    <label>Plataforma:</label>
+    <input type="text" formControlName="plataforma">
+    <div *ngIf="serieForm.get('plataforma')?.invalid && serieForm.get('plataforma')?.touched">
+      <small>La plataforma es obligatoria.</small>
     </div>
-
+  </div>
+  <div>
+    <label>Sinopsis:</label>
+    <textarea formControlName="sinopsis"></textarea>
+    <small *ngIf="serieForm.get('sinopsis')">
+      {{ serieForm.get('sinopsis')?.value.length || 0 }}/150 caracteres
+    </small>
+    <div *ngIf="serieForm.get('sinopsis')?.invalid && serieForm.get('sinopsis')?.touched">
+      <small>La sinopsis no debe exceder los 120 caracteres.</small>
+    </div>
+  </div>
+  <div>
+    <label>Carátula:</label>
     <div>
-        <label>Sinopsis:</label>
-        <textarea formControlName="sinopsis"></textarea>
-        <small *ngIf="serieForm.get('sinopsis')">
-          {{ serieForm.get('sinopsis')?.value.length || 0 }}/150 caracteres
+      <input type="radio" formControlName="imageType" value="url" (change)="onImageTypeChange()"> URL
+      <input type="radio" formControlName="imageType" value="file" (change)="onImageTypeChange()"> Archivo
+    </div>
+    <div *ngIf="serieForm.get('imageType')?.value === 'url'">
+      <input type="text" formControlName="caratulaUrl" placeholder="Introduce URL de la imagen">
+      <div *ngIf="serieForm.get('caratulaUrl')?.invalid && serieForm.get('caratulaUrl')?.touched">
+        <small *ngIf="serieForm.get('caratulaUrl')?.errors?.['pattern']">
+          Introduce una URL válida que termine en .png, .jpg, .jpeg, .gif o webp.
         </small>
-        <div *ngIf="serieForm.get('sinopsis')?.invalid && serieForm.get('sinopsis')?.touched">
-          <small>La sinopsis no debe exceder los 120 caracteres.</small>
-        </div>
+        <small *ngIf="serieForm.get('caratulaUrl')?.errors?.['required']">
+          La URL de la carátula es obligatoria.
+        </small>
       </div>
-
-    <!-- <div>
-        <label>Carátula:</label>
-        <div>
-            <input type="radio" formControlName="imageType" value="url" (change)="onImageTypeChange()"> URL
-            <input type="radio" formControlName="imageType" value="file" (change)="onImageTypeChange()"> Archivo
-        </div>
-        <div *ngIf="serieForm.get('imageType')?.value === 'url'">
-            <input type="text" formControlName="caratulaUrl" placeholder="Introduce URL de la imagen">
-            <div *ngIf="serieForm.get('caratulaUrl')?.invalid && serieForm.get('caratulaUrl')?.touched">
-                <small>Introduce una URL válida.</small>
-            </div>
-        </div>
-        <div *ngIf="serieForm.get('imageType')?.value === 'file'">
-            <input type="file" (change)="onFileSelected($event)">
-            <div *ngIf="imagePreview">
-                <img [src]="imagePreview" alt="Vista previa" width="150">
-            </div>
-        </div>
-    </div> -->
-    <div>
-        <label>Carátula:</label>
-        <div>
-          <input type="radio" formControlName="imageType" value="url" (change)="onImageTypeChange()"> URL
-          <input type="radio" formControlName="imageType" value="file" (change)="onImageTypeChange()"> Archivo
-        </div>
-        <div *ngIf="serieForm.get('imageType')?.value === 'url'">
-          <input type="text" formControlName="caratulaUrl" placeholder="Introduce URL de la imagen">
-          <div *ngIf="serieForm.get('caratulaUrl')?.invalid && serieForm.get('caratulaUrl')?.touched">
-            <small *ngIf="serieForm.get('caratulaUrl')?.errors?.['pattern']">
-              Introduce una URL válida que termine en .png, .jpg, .jpeg, .gif o webp.
-            </small>
-            <small *ngIf="serieForm.get('caratulaUrl')?.errors?.['required']">
-              La URL de la carátula es obligatoria.
-            </small>
-          </div>
-        </div>
-        <div *ngIf="serieForm.get('imageType')?.value === 'file'">
-          <input type="file" (change)="onFileSelected($event)">
-          <div *ngIf="imagePreview">
-            <img [src]="imagePreview" alt="Vista previa" width="150">
-          </div>
-        </div>
+    </div>
+    <div *ngIf="serieForm.get('imageType')?.value === 'file'">
+      <input type="file" (change)="onFileSelected($event)">
+      <div *ngIf="imagePreview">
+        <img [src]="imagePreview" alt="Vista previa" width="150">
       </div>
-    <button type="submit" [disabled]="serieForm.invalid">Añadir Serie</button>
+    </div>
+  </div>
+  <button type="submit" [disabled]="serieForm.invalid">Añadir Serie</button>
 </form>

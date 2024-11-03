@@ -3,7 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SeriesService } from '../../services/series.service';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';  // Importa CommonModule
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-add-serie',
@@ -37,7 +37,6 @@ export class AddSerieComponent {
   }
 
   onImageTypeChange() {
-    // Limpiamos los valores previos de los campos de URL y archivo al cambiar de tipo
     this.serieForm.get('caratulaUrl')?.reset();
     this.imagePreview = null;
   }
@@ -45,7 +44,6 @@ export class AddSerieComponent {
   onFileSelected(event: Event) {
     const file = (event.target as HTMLInputElement).files?.[0];
     if (file) {
-      // Solo procesamos si el archivo es una imagen
       if (file.type.startsWith('image/')) {
         const reader = new FileReader();
         reader.onload = () => {
@@ -61,8 +59,6 @@ export class AddSerieComponent {
   addSerie() {
     if (this.serieForm.valid) {
       const formData = this.serieForm.value;
-
-      // Si el usuario seleccionó URL, enviamos la URL, si es archivo, usamos la vista previa
       const serie = {
         ...formData,
         caratula: formData.imageType === 'url' ? formData.caratulaUrl : this.imagePreview

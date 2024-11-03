@@ -1,7 +1,6 @@
 <nav class="navbar">
   <div class="logo">RankingS</div>
   <ul class="navbar-links">
-    <!-- <li><a routerLink="/" routerLinkActive="active">Home</a></li> -->
     <li><a routerLink="/series" routerLinkActive="active">Series</a></li>
     <li><a routerLink="/add-serie" routerLinkActive="active">Añadir Serie</a></li>
   </ul>
@@ -12,7 +11,6 @@
   </div>
 </nav>
 <ul class="mobile-menu" [class.open]="menuOpen">
-  <li><a routerLink="/" routerLinkActive="active" (click)="toggleMenu()">Home</a></li>
   <li><a routerLink="/series" routerLinkActive="active" (click)="toggleMenu()">Series</a></li>
   <li><a routerLink="/add-serie" routerLinkActive="active" (click)="toggleMenu()">Añadir Serie</a></li>
 </ul>

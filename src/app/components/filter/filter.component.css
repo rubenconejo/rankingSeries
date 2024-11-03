@@ -1,0 +1,25 @@
+.filter-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 1.5rem auto;
+    padding: 1rem;
+}
+
+.filter-container input,
+.filter-container select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+    margin-right: 2rem;
+}
+
+.filter-container input:focus,
+.filter-container select:focus {
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+}
